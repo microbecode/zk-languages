@@ -1,6 +1,6 @@
 # Aleo's Leo language
 
-Leo is a language used in the Aleo L1 blockchain. It enables full privacy for transactions. The programs themselves are public.
+Leo is a language used in the [Aleo](https://explorer.aleo.org/program/aleoswap06.aleo) L1 blockchain. It enables full privacy for transactions. The programs themselves are public.
 
 ## Usage
 

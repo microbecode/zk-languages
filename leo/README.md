@@ -1,6 +1,8 @@
 # Aleo's Leo language
 
-Leo is a language used in the [Aleo](https://explorer.aleo.org/program/aleoswap06.aleo) L1 blockchain. It enables full privacy for transactions. The programs themselves are public.
+Leo is a ZK language used in the [Aleo](https://aleo.org/) L1 blockchain. It enables full privacy for transactions. The programs themselves are public.
+
+Leo can be used as stand-alone locally, or for Aleo smart contracts.
 
 ## Usage
 
@@ -21,8 +23,8 @@ The intermediary format code is public, once deployed to the blockchain. An exam
 
 ### Inputs
 
-Inputs are given to the 'main' function through the file in folder "inputs".
+Inputs (both public and private) are given to the 'main' function through the file in folder "inputs".
 
 ### Outputs
 
-Outputs are given in the command line. There is also folder "outputs", but nothing gets generated there - unsure what is its function.
+Outputs are displayed in the command line. There is also folder "outputs", but nothing gets generated there - unsure what is its function.

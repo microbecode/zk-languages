@@ -1,4 +1,4 @@
 // The program input for multiply/src/main.leo
 [main]
-public a: u32 = 5u32;
-b: u32 = 6u32;
+public a: u32 = 2u32;
+b: u32 = 3u32;

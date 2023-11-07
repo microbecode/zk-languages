@@ -3,3 +3,4 @@
 *.prover
 *.verifier
 outputs/
+build

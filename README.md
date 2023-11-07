@@ -8,3 +8,11 @@ The used program has the following characteristics:
 - It has one public output, which is the multiple of `a` and `b`.
 
 The program, therefore, demonstrates how to write a ZK program where you can prove that you know a private `a` so that `a * b = c`.
+
+## Differences
+
+The languages folders have at least the following possible differences:
+
+- Different technologies, so different required files and instructions
+- Some languages generate proofs explicitly, some do things more in the background
+- Some languages support privacy, while others don't

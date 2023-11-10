@@ -15,4 +15,5 @@ The languages folders have at least the following possible differences:
 
 - Different technologies, so different required files and instructions
 - Some languages generate proofs explicitly, some do things more in the background
+- Some languages don't have local proving available at all, currently
 - Some languages support privacy, while others don't

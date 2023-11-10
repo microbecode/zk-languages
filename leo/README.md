@@ -1,4 +1,4 @@
-# Aleo's Leo language
+# Leo language from Aleo
 
 Leo is a ZK language used in the [Aleo](https://aleo.org/) L1 blockchain. It enables full privacy for transactions. The programs themselves are public.
 

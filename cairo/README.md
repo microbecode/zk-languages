@@ -2,14 +2,13 @@
 
 Cairo is a ZK language used in the [Starknet](https://www.starknet.io/en) L2 blockchain. It does not support privacy.
 
-Cairo can be used as stand-alone locally, or for Starknet smart contracts.
+Cairo can be used as stand-alone locally (without proofs), or for Starknet smart contracts.
 
 ## Usage
 
 1. Follow the official installation instructions to install [Scarb](https://docs.swmansion.com/scarb/download.html), which is Cairo's unofficial package manager
-1. Run `nargo prove`. This generates a `proofs` folder with the actual proof for the program execution, and `Verifier.toml` which has inputs for the verifier.
-1. Run `nargo verify`. This verifies the proof with the verifier inputs. Using incorrect verifier inputs, outputs or wrong proof fails the verification.
-1. If you wish, you can also generate a Solidity verifier program by `nargo codegen-verifier`. This gets generated in the `contract` folder. Note that this verifier is program-specific, and will not work with any other Noir program than the one you used when generating the verifier.
+1. Run `scarb build`. This builds the program
+1. Run `scarb cairo-run`. This runs the program. The inputs are inside the program, since Cairo currently doesn't support inputting parameters directly
 
 ## Overview
 
@@ -19,16 +18,16 @@ The program itself is in the "src" folder.
 
 #### Intermediary format
 
-The original Noir program is first compiled into an intermediary format. In this case, the format is ACIR. That is not explicitly generated in the project folder.
+A Starknet Cairo program is first compiled into an intermediary format, which is called Sierra. A stand-alone Cairo program, like we have in this folder, is however executed directly.
 
 ### Inputs
 
-Inputs (both public and private) are given to the 'main' function through the file `Prover.toml`.
+All inputs are given inside the program itself. All inputs are public, since Cairo does not support privacy.
 
 ### Outputs
 
-Outputs and public inputs are displayed in the file `Verifier.toml`. This is the input file used when verifying a proof.
+Outputs are logged in the console.
 
 ### Proof
 
-The proof string itself is generated in the `proofs` folder.
+Unfortunately, this way of utilizing Cairo does not generate proofs. Proofs are generated only for Cairo programs inside the Starknet blockchain. There is no local prover available currently.

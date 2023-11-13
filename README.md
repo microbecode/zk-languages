@@ -18,3 +18,7 @@ The languages folders have at least the following possible differences:
 - Some languages don't have local proving available at all, currently
 - Some languages support privacy, while others don't
 - Some languages require a trusted setup
+
+## Contact
+
+Questions? Wanna see some language here? Other issues? Feel free to [get in touch](https://linktr.ee/lauripeltonen) or just open an issue / PR here.

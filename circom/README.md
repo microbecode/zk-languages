@@ -12,7 +12,7 @@ Using Circom includes a lot of intermediary steps, which make learning its usage
 1. Run `circom multiply.circom --r1cs --wasm --sym --c` in the `multiply` folder. This generates most of the intermediary data needed for proofs.
 1. Run `node generate_witness.js multiply.wasm ../input.json witness.wtns` in the `multiply_js` folder. This generates the rest of the intermediary data (witness), utilizing the inputs.
 
-Next, you will need to run a trusted setup ceremony, to generate some common secret data for the prover and verifier.
+Next, you will need to run a trusted setup ceremony, to generate some common secret data for the prover and verifier(s).
 
 ### Trusted setup
 

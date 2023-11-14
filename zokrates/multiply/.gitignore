@@ -1,0 +1,7 @@
+abi.json
+out*
+proof.json
+proving.key
+verification.key
+verifier.sol
+witness

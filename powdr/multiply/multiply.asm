@@ -1,6 +1,6 @@
 machine Multiply {
 
-    degree 8;
+    degree 16;
 
     // this simple machine does not have submachines
 
@@ -8,20 +8,28 @@ machine Multiply {
     reg X[<=];
     reg Y[<=];
     reg Z[<=];
-    reg O[<=];
+
     reg A;
     reg B;
+    reg C;
+    reg D;
 
     instr mul X, Y -> Z {
         Z = X * Y
     }
 
-    function main -> A {
+    instr assert_equal X, Y {
+        X = Y
+    }
+
+    function main {
         A <=X= ${ ("input", 0) };
         B <=X= ${ ("input", 1) };
+        C <=X= ${ ("input", 2) };
 
-        A <== mul(A, B);
-        // not really returning anything, maybe the language doesn't support outputs yet?
-        return A;
+        D <== mul(A, B);
+        assert_equal C, D;
+
+        return;
     }
 }

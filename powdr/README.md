@@ -9,7 +9,7 @@ Unfortunately, the language itself is quite much work in progress. Unsure if, fo
 ## Usage
 
 1. Follow the official installation instructions to install [Powdr](https://docs.powdr.org/installation.html).
-1. Run `powdr pil multiply.asm --field gl --force --inputs 0 +--prove-with estark` in folder `multiply`. This generates all of the needed files, including proofs.
+1. Run `powdr pil multiply.asm --field gl --force --inputs 2,3,6 --prove-with estark` in folder `multiply`. This generates all of the needed files, including proofs.
 
 Unfortunately, no built-in verifier generation is provided with Powdr. One could generate a verifier with some other tooling, by utilizing the generated intermediary files.
 
@@ -25,7 +25,7 @@ The inputs are provided as command-line arguments.
 
 ### Outputs
 
-Outputs are not supported by the language yet.
+Outputs are not supported by the language yet. Therefore, the expected output is given as the third input, and its correctness is asserted inside the program.
 
 ### Proof
 

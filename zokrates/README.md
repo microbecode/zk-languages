@@ -2,7 +2,9 @@
 
 Zokrates is a stand-alone ZK language. It enables full privacy for operations.
 
-## Usage
+There is no native ecosystem/network/blockchain around Zokrates. Therefore, no ZK smart contracts are supported.
+
+## Stand-alone usage
 
 1. Follow the official installation instructions to install [Zokrates toolbox](https://zokrates.github.io/gettingstarted.html)
 1. Run `zokrates compile -i root.zok`. This compiles your program

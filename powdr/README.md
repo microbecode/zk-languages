@@ -6,7 +6,9 @@ Powdr utilizes a ZK Virtual Machine. When generating proofs, the proof is genera
 
 Unfortunately, the language itself is quite much work in progress. Unsure if, for example, program outputs are currently supported at all. Also unsure if data is private or public.
 
-## Usage
+There is no native ecosystem/network/blockchain around Powdr. Therefore, no ZK smart contracts are supported.
+
+## Stand-alone usage
 
 1. Follow the official installation instructions to install [Powdr](https://docs.powdr.org/installation.html).
 1. Run `powdr pil multiply.asm --field gl --force --inputs 2,3,6 --prove-with estark` in folder `multiply`. This generates all of the needed files, including proofs.

@@ -4,7 +4,9 @@ Lurk is a ZK language and a dialect of Lisp. It should enable full privacy for o
 
 Lurk is, according to the writer's experience, by far the weirdest ZK language out there. In theory, it supports "traditional" ZK concepts, but everything is just weird.
 
-## Usage
+There is no native ecosystem/network/blockchain around Lurk. Therefore, no ZK smart contracts are supported.
+
+## Stand-alone usage
 
 These instructions are adapted from https://github.com/lurk-lab/lurk-rs .
 
@@ -20,4 +22,4 @@ There is probably some way to input a program from a file, but could not figure 
 1. Generate a proof for the commitment: `!(prove)`
 1. Verify the proof: `!(verify "Nova_Pallas_10_1e5dabae7e58aef62d8fcf460360faf500c3102f664b9221930e774ee2e8d7a4")`
 
-The writer does not claim to understand what all happens in the above commands.
+The above creates a cryptographic commitment, which is in the heart of all ZK proofs. In this case the commitment phase is just very explicit.

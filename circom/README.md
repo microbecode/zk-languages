@@ -6,7 +6,9 @@ Circom is the first mainstream ZK language. Its development started around 2018.
 
 Using Circom includes a lot of intermediary steps, which make learning its usage a bit more tedious, but helps understand the needed steps in general.
 
-## Usage
+There is no native ecosystem/network/blockchain around Circom. Therefore, no ZK smart contracts are supported.
+
+## Stand-alone usage
 
 1. Follow the official installation instructions to install [Circom tooling](https://docs.circom.io/getting-started/installation/#important-deprecation-note). Install everything, including the snarkjs.
 1. Run `circom multiply.circom --r1cs --wasm --sym --c` in the `multiply` folder. This generates most of the intermediary data needed for proofs.

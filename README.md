@@ -9,6 +9,12 @@ The used program has the following characteristics:
 
 The program, therefore, demonstrates how to write a ZK program where you can prove that you know a private `a` so that `a * b = c`.
 
+## Stand-alone and contracts
+
+ZK languages can usually be used at least as stand-alone. This means that proofs are generated locally and no network is utilized.
+
+Some languages (or the ecosystems around them) support also ZK smart contracts. In this case, the same multiplication code is also expressed in a contract format, which typically differs a bit from the stand-alone version.
+
 ## Differences
 
 The languages folders have at least the following possible differences:
@@ -18,6 +24,7 @@ The languages folders have at least the following possible differences:
 - Some languages don't have local proving available at all, currently
 - Some languages support privacy, while others don't
 - Some languages require a trusted setup
+- Some languages (or ecosystems around the language) support ZK smart contracts
 
 ## Contact
 

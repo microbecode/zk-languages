@@ -5,24 +5,15 @@ contract Multiply {
 
     use dep::aztec::{
         note::{
-            note_getter_options::NoteGetterOptions,
             note_header::NoteHeader,
             utils as note_utils,
         },
-        context::{PrivateContext, PublicContext, Context},
-        hash::{compute_secret_hash},
-        state_vars::{map::Map, public_state::PublicState, set::Set},
-        types::type_serialization::{
-            field_serialization::{FieldSerializationMethods, FIELD_SERIALIZED_LEN},
-            bool_serialization::{BoolSerializationMethods, BOOL_SERIALIZED_LEN},
-            aztec_address_serialization::{AztecAddressSerializationMethods, AZTEC_ADDRESS_SERIALIZED_LEN},
-        },
-        selector::compute_selector,
+        context::{Context}
     };
 
     use crate::types::{
-        transparent_note::{TransparentNote, TransparentNoteMethods, TRANSPARENT_NOTE_LEN},
-        token_note::{TokenNote, TokenNoteMethods, TOKEN_NOTE_LEN},
+        transparent_note::{TransparentNoteMethods, TRANSPARENT_NOTE_LEN},
+        token_note::{TokenNoteMethods, TOKEN_NOTE_LEN},
     };
 
     struct Storage {
@@ -35,6 +26,7 @@ contract Multiply {
         }
     }
 
+    // Required, even if empty
     #[aztec(private)]
     fn constructor() {
     }

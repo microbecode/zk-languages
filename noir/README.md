@@ -18,6 +18,8 @@ At the time of writing, interoperability for Noir smart contracts is under const
 1. Go to `contract` folder and execute `aztec-cli compile contracts`
 1. You can deploy locally by `aztec-cli deploy contracts/target/Multiply.json --salt 0`
 
+If you want, you can even interact with the contract by adjusting the instructions at https://docs.aztec.network/dev_docs/getting_started/quickstart#call-a-contract-with-the-cli
+
 ## Stand-alone program overview
 
 ### ZK program
@@ -39,3 +41,7 @@ Outputs and public inputs are displayed in the file `Verifier.toml`. This is the
 ### Proof
 
 The proof string itself is generated in the `proofs` folder.
+
+## Contract program overview
+
+The program includes a lot of stuff which is bound to disappear, once the ecosystem matures. There are a lot of definitions and files which seem superfluous. The main logic is in one function in `main.nr`, but a lot of weird stuff is required around it.

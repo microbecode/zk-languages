@@ -15,7 +15,8 @@ At the time of writing, interoperability for Noir smart contracts is under const
 
 1. Install and run Docker
 1. Install the Sandbox by following the instructions at https://docs.aztec.network/dev_docs/getting_started/quickstart
-1.
+1. Go to `contract` folder and execute `aztec-cli compile contracts`
+1. You can deploy locally by `aztec-cli deploy contracts/target/Multiply.json --salt 0`
 
 ## Stand-alone program overview
 

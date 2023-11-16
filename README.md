@@ -15,6 +15,8 @@ ZK languages can usually be used at least as stand-alone. This means that proofs
 
 Some languages (or the ecosystems around them) support also ZK smart contracts. In this case, the same multiplication code is also expressed in a contract format, which typically differs a bit from the stand-alone version.
 
+Do note that especially the contract format evolves rapidly in all ecosystems. Anything written here may be outdated already the day after it's written.
+
 ## Differences
 
 The languages folders have at least the following possible differences:

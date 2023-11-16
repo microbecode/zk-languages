@@ -17,6 +17,12 @@ Some languages (or the ecosystems around them) support also ZK smart contracts. 
 
 Do note that especially the contract format evolves rapidly in all ecosystems. Anything written here may be outdated already the day after it's written.
 
+### Folder structure
+
+All folders under the root folder are based on the language's name. Under that, there is a README and a `multiply` folder, which contains the stand-alone programs with that language.
+
+If the language has smart contract capabilities, they are demonstrated in a `contract` folder.
+
 ## Differences
 
 The languages folders have at least the following possible differences:

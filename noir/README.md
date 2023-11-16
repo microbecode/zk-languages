@@ -2,16 +2,22 @@
 
 Noir is a ZK language used in the [Aztec](https://aztec.network/) L2 blockchain. It enables full privacy for transactions.
 
-At the time of writing, interoperability for Noir smart contracts is under construction. A local sandbox is available, but no testnets. This example focuses on stand-alone usage, without smart contracts.
+At the time of writing, interoperability for Noir smart contracts is under construction. A local sandbox is available, but no testnets.
 
-## Usage
+## Stand-alone usage
 
 1. Follow the official installation instructions to install [Nargo](https://noir-lang.org/getting_started/nargo_installation), which is Noir's command line utility.
 1. Run `nargo prove`. This generates a `proofs` folder with the actual proof for the program execution, and `Verifier.toml` which has inputs for the verifier.
 1. Run `nargo verify`. This verifies the proof with the verifier inputs. Using incorrect verifier inputs, outputs or wrong proof fails the verification.
 1. If you wish, you can also generate a Solidity verifier program by `nargo codegen-verifier`. This gets generated in the `contract` folder. Note that this verifier is program-specific, and will not work with any other Noir program than the one you used when generating the verifier.
 
-## Overview
+## Contract usage
+
+1. Install and run Docker
+1. Install the Sandbox by following the instructions at https://docs.aztec.network/dev_docs/getting_started/quickstart
+1.
+
+## Stand-alone program overview
 
 ### ZK program
 

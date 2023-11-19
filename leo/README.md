@@ -4,12 +4,26 @@ Leo is a ZK language used in the [Aleo](https://aleo.org/) L1 blockchain. It ena
 
 Leo can be used as stand-alone locally, or for Aleo smart contracts.
 
-## Usage
+## Stand-alone usage
 
 1. Follow the official installation instructions to install [Leo](https://developer.aleo.org/leo/installation)
-1. Run `leo run multiply`
+1. Run `leo run main` to execute the program without proofs
+1. Run `leo execute main` to generate and verify proofs for the program execution
 
-## Overview
+## Contract usage
+
+In theory, it should be possible to deploy a Leo program both to a live on-chain and to a local blockchain. Unfortunately, at the time of writing, the live testnets had some issues and live deployments were not possible.
+
+Do note that much of the documentation is a bit outdated and you'll probably need to search their Discord for answers.
+
+Remember that all Aleo programs need to have a unique name. Rename this program if you want to deploy it.
+
+1. Figure out how to get testnet tokens. Faucet only gives them to people living in the States.
+1. Install Leo according to the instructions above
+1. Install SnarkOS according to the instructions at https://github.com/AleoHQ/snarkos
+1. Follow instructions at https://developer.aleo.org/testnet/getting_started/deploy_execute_demo
+
+## Stand-alone program overview
 
 ### ZK program
 

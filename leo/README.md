@@ -12,11 +12,13 @@ Leo can be used as stand-alone locally, or for Aleo smart contracts.
 
 ## Contract usage
 
-In theory, it should be possible to deploy a Leo program both to a live on-chain and to a local blockchain. Unfortunately, at the time of writing, the live testnets had some issues and live deployments were not possible.
+Some of the documentation is a bit outdated and you'll probably need to search their Discord for answers.
 
-Do note that much of the documentation is a bit outdated and you'll probably need to search their Discord for answers.
+Remember that all Aleo programs need to have a unique name. Rename this program if you want to redeploy it.
 
-Remember that all Aleo programs need to have a unique name. Rename this program if you want to deploy it.
+An example deployment has been done at https://explorer.aleo.org/transaction/at1v3k0wqg3s4zdwg9whede30u2npcs55gzyj0e2rf743f73mz5tvgs3rshvk
+
+How to deploy your own version:
 
 1. Figure out how to get testnet tokens. Faucet only gives them to people living in the States.
 1. Install Leo according to the instructions above

@@ -11,9 +11,9 @@ The program, therefore, demonstrates how to write a ZK program where you can pro
 
 ## Stand-alone and contracts
 
-ZK languages can usually be used at least as stand-alone. This means that proofs are generated locally and no network is utilized.
+ZK languages can usually be used at least as stand-alone. This means that proofs generated for ZK programs or for ZK-VM executions.
 
-Some languages (or the ecosystems around them) support also ZK smart contracts. In this case, the same multiplication code is also expressed in a contract format, which typically differs a bit from the stand-alone version.
+Some languages (or the ecosystems around them) support also ZK smart contracts (or zkApps). In this case, the same multiplication code is also expressed in a contract format, which typically differs from the stand-alone version.
 
 Do note that especially the contract format evolves rapidly in all ecosystems. Anything written here may be outdated already the day after it's written.
 

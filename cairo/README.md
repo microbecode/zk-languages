@@ -16,18 +16,18 @@ This works the same as stand-alone usage, except that you can't run the program 
 
 ### Deployment
 
-Note that these instructions are bound to be deprecated fast. Starknet testnet is switching to Sepolia and the syntax of all tooling changes rapidly.
-
-1. Install the required tooling: https://docs.starknet.io/documentation/quick_start/deploy_a_smart_contract/
+1. Install the required tooling (starkli and scarb): https://book.starknet.io/ch02-05-testnet-deployment.html
 1. Install a wallet with ArgentX: https://docs.starknet.io/documentation/quick_start/set_up_an_account/
-1. Get testnet tokens: https://www.argent.xyz/learn/how-to-get-testnet-eth-for-starknet/
+1. Get testnet tokens: https://blastapi.io/faucets/starknet-sepolia-eth
 1. Transfer tokens to some other address to get your account contract deployed
-1. Setup an Alchemy RPC node
-1. Prepare your account. Here's an example I used: `starkli account fetch 0xPUBLIC_ADDRESS --output ~/.starkli-wallets/deployer/account.json --rpc https://starknet-goerli.g.alchemy.com/v2/MYKEY`
-1. Declare your contract. Here's an example I used: `starkli declare --account /home/laurip/.starkli-wallets/deployer/account.json ./target/dev/multiply_Multiply.contract_class.json --keystore ~/.starkli-wallets/deployer/keystore.json --rpc https://starknet-goerli.g.alchemy.com/v2/MYKEY`
+1. Export your wallet's private key. You'll need it in the next step
+1. Prepare your account locally. Here's an example I used: `starkli account fetch 0xPUBLIC_KEY_OF_YOUR_WALLET --output ~/.starkli-wallets/deployer/account.json --rpc https://starknet-sepolia.public.blastapi.io`
+1. Declare your contract to the network. Here's an example I used: `starkli declare --account ~/.starkli-wallets/deployer/account.json --keystore ~/.starkli-wallets/deployer/keystore.json --rpc https://starknet-sepolia.public.blastapi.io ./target/dev/multiply_Multiply.contract_class.json`
 1. Deploy your contract. Here's an example I used: `starkli deploy --account /home/laurip/.starkli-wallets/deployer/account.json --keystore ~/.starkli-wallets/deployer/keystore.json --rpc https://starknet-goerli.g.alchemy.com/v2/MYKEY CLASSHASH`
 
-An example deployment can be found [here](https://testnet.starkscan.co/contract/0x07524c59c4d1f248397a0aa68e8a1bd3ae207bc5645c6851e5992ff2bea640bb#class-code-history).
+An example deployment can be found [here](https://sepolia.starkscan.co/contract/0x0067560bce438b6464423ba1b0d97b291b14c699856e2b59ce2760554154fe45).
+
+Note that at some point Starknet deployments will require STRK tokens, but at the time of writing one can use Eth as well.
 
 ## Overview
 

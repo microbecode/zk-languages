@@ -12,7 +12,7 @@ mod Multiply {
     }
 
     // Implementing this trait exposes the function as a public function inside the contract
-    #[external(v0)]
+    #[abi(embed_v0)]
     impl PublicFunctions of super::IMultiply<ContractState> {
         fn multiply(self: @ContractState, a: felt252, b: felt252) -> felt252 {
             a * b

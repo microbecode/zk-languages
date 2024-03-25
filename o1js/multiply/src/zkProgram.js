@@ -1,6 +1,6 @@
-import { Field, verify, Experimental } from "o1js";
+import { Field, verify, ZkProgram } from "o1js";
 
-const MyProgram = Experimental.ZkProgram({
+const MyProgram = ZkProgram({
   publicInput: Field,
   publicOutput: Field,
   methods: {

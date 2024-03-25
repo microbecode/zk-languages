@@ -1,4 +1,14 @@
 {
   "version": 1,
-  "deployAliases": {}
+  "deployAliases": {
+    "zklanguages": {
+      "networkId": "testnet",
+      "url": "https://proxy.berkeley.minaexplorer.com/graphql",
+      "keyPath": "keys/zklanguages.json",
+      "feepayerKeyPath": "/home/laurip/.cache/zkapp-cli/keys/agecheckacc.json",
+      "feepayerAlias": "agecheckacc",
+      "fee": "1",
+      "smartContract": "Multiply"
+    }
+  }
 }

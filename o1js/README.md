@@ -1,10 +1,10 @@
 # o1js language from O(1) Labs
 
-o1js is a ZK language used in the [Mina](https://minaprotocol.com/) L1 blockchain. It enables full privacy for transactions.
+o1js is a ZK framework used in the [Mina](https://minaprotocol.com/) L1 blockchain. It enables full privacy for transactions.
 
 The language can be used as stand-alone or in Mina smart contracts.
 
-The language is not often used as stand-alone; most documentation and examples are for utilizing it as part of a Mina smart contract.
+Unfortunately, most documentation and examples are for utilizing the language as part of a Mina smart contract: stand alone usage is poorly documented.
 
 ## Stand-alone usage
 
@@ -12,11 +12,13 @@ The language is not often used as stand-alone; most documentation and examples a
 1. Install packages with `npm i`
 1. Run `node src/zkProgram.js`. This generates a proof and verifies it. All data is output to console.
 
-Unfortunately, at the time of writing, the only available verifier is the JS verifier from O(1) Labs.
+At the time of writing, the only available verifier is the JS verifier from O(1) Labs.
 
 ## Contract usage
 
-The contract version is located in folder `contract`. It could be deployed by following the instructions at https://docs.minaprotocol.com/zkapps/o1js/interact-with-mina .
+The contract version is located in folder `contract`. It can be deployed by following the instructions at https://docs.minaprotocol.com/zkapps/how-to-deploy-a-zkapp .
+
+An example deployment can be seen at https://minascan.io/berkeley/tx/5JvNvMQstQWg5xN21n4BNTuT92t5yL3RW13yBovxoz27kZDReW2s?type=zk-tx .
 
 ## Overview
 

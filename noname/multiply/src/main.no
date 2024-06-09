@@ -1,0 +1,5 @@
+fn main(pub xx: Field, yy: Field) -> Field {
+    let mut res = xx * yy;
+
+    return res;
+}

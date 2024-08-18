@@ -8,7 +8,7 @@ Leo can be used as stand-alone locally, or for Aleo smart contracts.
 
 1. Follow the official installation instructions to install [Leo](https://developer.aleo.org/leo/installation)
 1. Run `leo run main 2u32 3u32` to execute the program without proofs
-1. Run `leo execute main` to generate and verify proofs for the program execution
+1. Run `leo execute main 2u32 3u32` to generate and verify proofs for the program execution
 
 ## Contract usage
 

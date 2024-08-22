@@ -6,10 +6,13 @@ At the time of writing, interoperability for Noir smart contracts is under const
 
 ## Stand-alone usage
 
-1. Follow the official installation instructions to install [Nargo](https://noir-lang.org/getting_started/nargo_installation), which is Noir's command line utility.
-1. Run `nargo prove`. This generates a `proofs` folder with the actual proof for the program execution, and `Verifier.toml` which has inputs for the verifier.
-1. Run `nargo verify`. This verifies the proof with the verifier inputs. Using incorrect verifier inputs, outputs or wrong proof fails the verification.
-1. If you wish, you can also generate a Solidity verifier program by `nargo codegen-verifier`. This gets generated in the `contract` folder. Note that this verifier is program-specific, and will not work with any other Noir program than the one you used when generating the verifier.
+1. Follow the official installation instructions to install [Nargo](https://noir-lang.org/docs/getting_started/installation/), which is Noir's command line utility.
+1. Install a [Barretenberg proving backend](https://github.com/AztecProtocol/aztec-packages/blob/master/barretenberg/cpp/src/barretenberg/bb/readme.md#installation).
+1. Run `nargo execute witness-multiply`. This generates a witness file in the "target" folder.
+1. Run `bb prove -b ./target/multiply.json -w ./target/witness-multiply.gz -o ./target/proof`. This generates a `proof` file in the "target" folder, with the generated proof.
+1. Compute a verification key: `bb write_vk -b ./target/multiply.json -o ./target/vk`
+1. Run `bb verify -k ./target/vk -p ./target/proof`. This verifies the proof with the verifier inputs. Using incorrect verifier inputs, outputs or wrong proof fails the verification.
+1. If you wish, you can also generate a Solidity verifier program by `nargo contract`. This gets generated in the `target` folder. Note that this verifier is program-specific, and will not work with any other Noir program than the one you used when generating the verifier.
 
 ## Contract usage
 

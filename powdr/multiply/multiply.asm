@@ -1,7 +1,4 @@
-machine Multiply {
-
-    degree 16;
-
+machine Multiply with degree: 16 {
     // this simple machine does not have submachines
 
     reg pc[@pc];
@@ -14,6 +11,9 @@ machine Multiply {
     reg C;
     reg D;
 
+    // Expose the register value of A in the last time step
+    public N = D(8);
+
     instr mul X, Y -> Z {
         Z = X * Y
     }
@@ -23,9 +23,9 @@ machine Multiply {
     }
 
     function main {
-        A <=X= ${ ("input", 0) };
-        B <=X= ${ ("input", 1) };
-        C <=X= ${ ("input", 2) };
+        A <=X= ${ std::prelude::Query::Input(0) };
+        B <=X= ${ std::prelude::Query::Input(1) };
+        C <=X= ${ std::prelude::Query::Input(2) };
 
         D <== mul(A, B);
         assert_equal C, D;

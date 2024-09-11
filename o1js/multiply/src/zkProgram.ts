@@ -1,12 +1,13 @@
 import { Field, verify, ZkProgram } from "o1js";
 
 const MyProgram = ZkProgram({
+  name: "multiply",
   publicInput: Field,
   publicOutput: Field,
   methods: {
     multiply: {
       privateInputs: [Field],
-      method(a, b) {
+      async method(a : Field, b : Field) {
         // This is just to make sure that the fields are read in the correct order
         a.assertEquals(Field(2));
         return a.mul(b);

@@ -4,13 +4,14 @@ o1js is a ZK framework used in the [Mina](https://minaprotocol.com/) L1 blockcha
 
 The language can be used as stand-alone or in Mina smart contracts.
 
-Unfortunately, most documentation and examples are for utilizing the language as part of a Mina smart contract: stand alone usage is poorly documented.
+Unfortunately, most documentation and examples are for utilizing the language as part of a Mina smart contract: stand alone usage is poorly documented. Most stand-alone usage docs can be found through the [recursion example](https://docs.minaprotocol.com/zkapps/tutorials/recursion).
 
 ## Stand-alone usage
 
 1. Go to folder `multiply`
 1. Install packages with `npm i`
-1. Run `node src/zkProgram.js`. This generates a proof and verifies it. All data is output to console.
+1. Build the project with `npx tsc`
+1. Run `node build/src/zkProgram.js`. This generates a proof and verifies it. All data is output to console.
 
 At the time of writing, the only available verifier is the JS verifier from O(1) Labs.
 

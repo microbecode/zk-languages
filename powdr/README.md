@@ -11,9 +11,12 @@ There is no native ecosystem/network/blockchain around Powdr. Therefore, no ZK s
 ## Stand-alone usage
 
 1. Follow the official installation instructions to install [Powdr](https://docs.powdr.org/installation.html).
-1. Run `powdr pil multiply.asm --field gl --force --inputs 2,3,6 --prove-with estark` in folder `multiply`. This generates all of the needed files, including proofs.
+1. Run a trusted setup: `powdr setup 16 --backend halo2 --field bn254`
+1. Generate witness: `powdr pil multiply.asm --field gl --force --inputs 2,3,6`
+1. Calculate a verification key: `powdr verification-key multiply.asm --field bn254 --backend halo2 --params params.bin`
+1. Generate the proof: `powdr prove multiply.asm --field bn254 --backend halo2 --params params.bin --vkey vkey.bin`
 
-Unfortunately, no built-in verifier generation is provided with Powdr. One could generate a verifier with some other tooling, by utilizing the generated intermediary files.
+TODO: verification.
 
 ## Overview
 
@@ -27,7 +30,7 @@ The inputs are provided as command-line arguments.
 
 ### Outputs
 
-Outputs are not supported by the language yet. Therefore, the expected output is given as the third input, and its correctness is asserted inside the program.
+Outputs are not supported by the language yet(?). Therefore, the expected output is given as the third input, and its correctness is asserted inside the program.
 
 ### Proof
 

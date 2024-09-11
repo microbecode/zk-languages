@@ -19,7 +19,7 @@ At the time of writing, the only available verifier is the JS verifier from O(1)
 
 The contract version is located in folder `contract`. It can be deployed by following the instructions at https://docs.minaprotocol.com/zkapps/how-to-deploy-a-zkapp .
 
-An example deployment can be seen at https://minascan.io/berkeley/tx/5JvNvMQstQWg5xN21n4BNTuT92t5yL3RW13yBovxoz27kZDReW2s?type=zk-tx .
+An example deployment can be seen at https://minascan.io/berkeley/account/B62qkNKaHco2SgnDzcAWU9CzBdQJ545XQHM2GwM8LPGVS9UHXjN9yaJ/txs .
 
 ## Overview
 
@@ -29,7 +29,7 @@ The program itself is in the "src" folder.
 
 #### Intermediary format
 
-There is no intermediary format. The JS itself is the ZK program.
+There is no intermediary format. The JS/TS itself is the ZK program.
 
 ### Inputs
 

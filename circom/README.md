@@ -19,7 +19,7 @@ Next, you will need to run a trusted setup ceremony, to generate some common sec
 ### Trusted setup
 
 1. Run `snarkjs powersoftau new bn128 12 pot12_0000.ptau -v` to start a trusted setup ceremony, in folder `multiply_js`
-1. Run `snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name="First contribution" -v` to contribute to the trusted setup ceremony
+1. Run `snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name="First contribution" -v` in folder `multiply_js` to contribute to the trusted setup ceremony
 1. Run `snarkjs powersoftau prepare phase2 pot12_0001.ptau pot12_final.ptau -v` in folder `multiply_js`
 1. Run `snarkjs groth16 setup ../multiply.r1cs pot12_final.ptau multiply_0000.zkey` in folder `multiply_js`
 1. Run `snarkjs zkey contribute multiply_0000.zkey multiply_0001.zkey --name="1st Contributor Name" -v` in folder `multiply_js`
@@ -35,7 +35,7 @@ Next, you will need to run a trusted setup ceremony, to generate some common sec
 
 ### ZK program
 
-The program itself is in the "src" folder.
+The program itself is in the "multiply" folder.
 
 ### Inputs
 

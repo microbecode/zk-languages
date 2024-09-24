@@ -7,7 +7,7 @@ There is no native ecosystem/network/blockchain around Zokrates. Therefore, no Z
 ## Stand-alone usage
 
 1. Follow the official installation instructions to install [Zokrates toolbox](https://zokrates.github.io/gettingstarted.html)
-1. Run `zokrates compile -i root.zok`. This compiles your program
+1. Run `zokrates compile -i multiply.zok`. This compiles your program
 1. Run `zokrates setup`. This prepares the trusted setup ceremony.
 1. Run `zokrates compute-witness -a 2 3`. This executes the program, generating witness files.
 1. Run `zokrates generate-proof`. This generates a `proof.json` file with the actual proof for the program execution
@@ -18,7 +18,7 @@ There is no native ecosystem/network/blockchain around Zokrates. Therefore, no Z
 
 ### ZK program
 
-The program itself is in `root.zok`
+The program itself is in `multiply.zok`
 
 #### Intermediary format
 

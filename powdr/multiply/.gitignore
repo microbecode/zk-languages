@@ -1,6 +1,8 @@
 commits.bin
 constants.bin
-constraints.json
+multiply_analyzed.pil
 multiply_opt.pil
+multiply_proof.bin
 multiply.pil
-proof.bin
+params.bin
+vkey.bin

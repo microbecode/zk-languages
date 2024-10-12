@@ -2,17 +2,17 @@
 
 Noir is a ZK language used in the [Aztec](https://aztec.network/) L2 blockchain. It enables full privacy for transactions.
 
-At the time of writing, interoperability for Noir smart contracts is under construction. A local sandbox is available, but no testnets.
+At the time of writing, a local sandbox is available, but no public testnet.
 
 ## Stand-alone usage
 
 1. Follow the official installation instructions to install [Nargo](https://noir-lang.org/docs/getting_started/installation/), which is Noir's command line utility.
-1. Install a [Barretenberg proving backend](https://github.com/AztecProtocol/aztec-packages/blob/master/barretenberg/cpp/src/barretenberg/bb/readme.md#installation).
-1. Run `nargo execute witness-multiply`. This generates a witness file in the "target" folder.
-1. Run `bb prove -b ./target/multiply.json -w ./target/witness-multiply.gz -o ./target/proof`. This generates a `proof` file in the "target" folder, with the generated proof.
-1. Compute a verification key: `bb write_vk -b ./target/multiply.json -o ./target/vk`
-1. Run `bb verify -k ./target/vk -p ./target/proof`. This verifies the proof with the verifier inputs. Using incorrect verifier inputs, outputs or wrong proof fails the verification.
-1. If you wish, you can also generate a Solidity verifier program by `nargo contract`. This gets generated in the `target` folder. Note that this verifier is program-specific, and will not work with any other Noir program than the one you used when generating the verifier.
+1. Install a [Barretenberg proving backend] with bbup: (https://github.com/AztecProtocol/aztec-packages/blob/master/barretenberg/bbup/README.md).
+1. At the time of writing, `bb` wasn't added to PATH with the installation. Running `bbup` gives you the installation folder - add that to your PATH manually.
+1. Generate the witness: `nargo execute witness-multiply`. This generates a witness file in the "target" folder.
+1. Run `bb prove_output_all -b ./target/multiply.json -w ./target/witness-multiply.gz -o ./target`. This generates needed proof and verification files in the `target` folder.
+1. Run `bb verify -k ./target/vk -p ./target/proof`. This verifies the proof with the verifier inputs. Using incorrect proof fails the verification.
+1. If you wish, you can also generate a Solidity verifier program by `bb contract`. This gets generated in the `target` folder as `contract.sol`. Note that this verifier is program-specific, and will not work with any other Noir program than the one you used when generating the verifier.
 
 ## Contract usage
 
@@ -39,11 +39,11 @@ Inputs (both public and private) are given to the 'main' function through the fi
 
 ### Outputs
 
-Outputs and public inputs are displayed in the file `Verifier.toml`. This is the input file used when verifying a proof.
+Outputs and public inputs are displayed in the file `./target/proof_fields`. The first value is the public input, the second value is the public output. The rest of the values are for internal usage.
 
 ### Proof
 
-The proof string itself is generated in the `proofs` folder.
+The proof string itself is generated in the `target` folder as file `proof`. The `proof_fields.json` file is for inspecting the inputs and outputs visually.
 
 ## Contract program overview
 

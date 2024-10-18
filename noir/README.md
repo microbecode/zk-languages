@@ -20,8 +20,8 @@ At the time of writing, a local sandbox is available, but no public testnet.
 1. Compile the contract: `aztec-nargo compile`
 1. Install and run Docker
 1. Follow the instructions at https://docs.aztec.network/dev_docs/getting_started/quickstart . Install and run the sandbox, then create an account 
-1. Open a new terminal. Go to `contract/contracts/counter` folder and execute `aztec-cli compile contracts`
-1. In te same folder, execute `aztec-wallet deploy ./target/counter-Counter.json --from accounts:my-wallet --args 1 accounts:my-wallet accounts:last -a counter` to deploy the contract in the sandbox
+1. In te same folder, execute `aztec-wallet deploy ./target/multiply-Multiply.json --from accounts:my-wallet -a multiply` to deploy the contract in the sandbox
+1. Execute the contract function with a transaction: `aztec-wallet send multiply --from accounts:my-wallet --contract-address multiply --args 2 3`. If you want to to see the returned value, it's easiest to just simulate the transaction: replace `send` with `simulate` in the command.
 
 
 ## Stand-alone program overview

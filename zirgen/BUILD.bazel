@@ -2,7 +2,7 @@ package(
     default_visibility = ["//visibility:public"],
 )
 
-load("//zirgen-main/bazel/rules/zirgen:dsl-defs.bzl", "zirgen_genfiles")
+load("@zirgen//bazel/rules/zirgen:dsl-defs.bzl", "zirgen_genfiles")
 
 zirgen_genfiles(
     name = "FibonacciIncs",

@@ -1,7 +1,18 @@
 workspace(name = "multiply")
 
+# TODO: Figure out bazel transitive dependencies so we don't have to
+# duplicate all the bazel dependencies between here and the zirgen
+# repository.
+
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
+
+git_repository(
+    name = "zirgen",
+    commit = "c1744110fc0ae08551cffe98a5f374edd59c58f5",
+    remote = "https://github.com/risc0/zirgen.git",
+)
 
 http_archive(
     name = "bazel_skylib",
@@ -54,17 +65,17 @@ maybe(
     ],
 )
 
-load("//bazel/toolchain/risc0:repo.bzl", "risc0_toolchain")
+load("@zirgen//bazel/toolchain/risc0:repo.bzl", "risc0_toolchain")
 
 risc0_toolchain(name = "risc0_toolchain")
 
-load("//bazel/toolchain/rv32im-linux:repo.bzl", "rv32im_linux_toolchain")
+load("@zirgen//bazel/toolchain/rv32im-linux:repo.bzl", "rv32im_linux_toolchain")
 
 rv32im_linux_toolchain(name = "rv32im_linux_toolchain")
 
 http_archive(
     name = "riscv_tests",
-    build_file = "//bazel/third_party:riscv_tests.BUILD",
+    build_file = "@zirgen//bazel/third_party:riscv_tests.BUILD",
     sha256 = "831a91955287865f9c09bbb7102f7ba2987d86823fd7b67c8a62eff46e21a83c",
     strip_prefix = "riscv-tests-a6ab6ae6008ffc2ea907ea9f6d2b8379583e7d56",
     url = "https://github.com/riscv/riscv-tests/archive/a6ab6ae6008ffc2ea907ea9f6d2b8379583e7d56.zip",
@@ -73,7 +84,7 @@ http_archive(
 http_archive(
     name = "rules_conda",
     patch_args = ["-p1"],
-    patches = ["//bazel/third_party/rules_conda:prefix.patch"],
+    patches = ["@zirgen//bazel/third_party/rules_conda:prefix.patch"],
     sha256 = "9793f86162ec5cfb32a1f1f13f5bf776e2c06b243c4f1ee314b9ec870144220d",
     url = "https://github.com/spietras/rules_conda/releases/download/0.1.0/rules_conda-0.1.0.zip",
 )
@@ -96,7 +107,7 @@ conda_create(
 register_toolchain(py3_env = "py3_env")
 
 register_toolchains(
-    "//bazel/rules/clang_format:toolchain",
+    "@zirgen//bazel/rules/clang_format:toolchain",
 )
 
 http_archive(

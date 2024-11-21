@@ -1,0 +1,16 @@
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+load("//zirgen-main/bazel/rules/zirgen:dsl-defs.bzl", "zirgen_genfiles")
+
+zirgen_genfiles(
+    name = "FibonacciIncs",
+    zir_file = ":fibonacci.zir",
+    zirgen_outs = [
+        (
+            ["--emit=rust"],
+            "fibonacci.rs.inc",
+        ),
+    ],
+)

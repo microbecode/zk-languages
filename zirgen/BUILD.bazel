@@ -1,0 +1,16 @@
+package(
+    default_visibility = ["//visibility:public"],
+)
+
+load("@zirgen//bazel/rules/zirgen:dsl-defs.bzl", "zirgen_genfiles")
+
+zirgen_genfiles(
+    name = "MultiplyIncs",
+    zir_file = ":multiply.zir",
+    zirgen_outs = [
+        (
+            ["--emit=rust"],
+            "multiply.rs.inc",
+        ),
+    ],
+)

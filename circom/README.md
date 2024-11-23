@@ -31,6 +31,10 @@ Next, you will need to run a trusted setup ceremony, to generate some common sec
 1. Run `snarkjs groth16 verify verification_key.json public.json proof.json` in folder `multiply_js` to verify a proof
 1. If you want, you can also generate a Solidity verifier with `snarkjs zkey export solidityverifier multiply_0001.zkey verifier.sol` in folder `multiply_js`. The file will be called `verifier.sol`.
 
+## Co-Circom
+
+There exist also a variant called (Co-Circom)[https://docs.taceo.io/docs/co-circom-cli/co-circom/], which can be used to generate Circom proofs collaborately. It's a combination of MPC and ZK. It utilizes the same Circom syntax, so it's not listed as a separate language.
+
 ## Overview
 
 ### ZK program

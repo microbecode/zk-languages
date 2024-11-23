@@ -23,6 +23,9 @@ At the time of writing, a local sandbox is available, but no public testnet.
 1. In te same folder, execute `aztec-wallet deploy ./target/multiply-Multiply.json --from accounts:my-wallet -a multiply` to deploy the contract in the sandbox
 1. Execute the contract function with a transaction: `aztec-wallet send multiply --from accounts:my-wallet --contract-address multiply --args 2 3`. If you want to to see the returned value, it's easiest to just simulate the transaction: replace `send` with `simulate` in the command.
 
+## Co-Noir
+
+There exist also a variant called (Co-Noir)[https://docs.taceo.io/docs/co-noir-cli/], which can be used to generate Noir proofs collaborately. It's a combination of MPC and ZK. It utilizes the same Noir syntax, so it's not listed as a separate language.
 
 ## Stand-alone program overview
 

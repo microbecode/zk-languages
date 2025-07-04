@@ -8,11 +8,11 @@ There is no native ecosystem/network/blockchain around Lurk. Therefore, no ZK sm
 
 ## Stand-alone usage
 
-These instructions are adapted from https://github.com/lurk-lab/lurk-rs .
+These instructions are adapted from https://github.com/lurk-lab/lurk .
 
 1. Run `git clone https://github.com/argumentcomputer/lurk-rs.git` in this folder to clone the repository
-1. Init the git submodules in the `lurk-rs` folder by `git submodule update --init --recursive`
-1. Run `cargo run --release` to start the Lurk prompt
+1. Compile the repo with `cargo install --path .`
+1. Restart your terminal. Run `lurk` to start the Lurk prompt
 
 There is probably some way to input a program from a file, but could not figure out how to do it. So we'll input it all by hand. This example is modified from https://github.com/argumentcomputer/lurk-rs/blob/main/demo/functional-commitment.lurk . In the Lurk prompt:
 

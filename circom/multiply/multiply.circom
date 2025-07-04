@@ -1,10 +1,10 @@
 pragma circom 2.0.0;
 
-template Multiplier2() {
+template Multiply() {
     signal input a;
     signal input b;
     signal output c;
     c <== a*b;
  }
 
- component main {public [b]} = Multiplier2();
+ component main = Multiply();

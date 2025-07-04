@@ -1,6 +1,6 @@
 # Circom language
 
-Circom is a stand-alone ZK language, with no explicit network or blockchain. It enables full privacy for operations.
+Circom is a stand-alone ZK language that enables full privacy for operations.
 
 Circom is the first mainstream ZK language. Its development started around 2018.
 
@@ -14,7 +14,7 @@ There is no native ecosystem/network/blockchain around Circom. Therefore, no ZK 
 1. Run `circom multiply.circom --r1cs --wasm --sym --c` in the `multiply` folder. This generates most of the intermediary data needed for proofs.
 1. Run `node generate_witness.js multiply.wasm ../input.json witness.wtns` in the `multiply_js` folder. This generates the rest of the intermediary data (witness), utilizing the inputs.
 
-Next, you will need to run a trusted setup ceremony, to generate some common secret data for the prover and verifier(s).
+Next, you will need to run a trusted setup ceremony to generate some common secret data for the prover and verifier.
 
 ### Trusted setup
 
@@ -35,7 +35,7 @@ Next, you will need to run a trusted setup ceremony, to generate some common sec
 
 ### ZK program
 
-The program itself is in the "multiply" folder.
+The program itself is in the "multiply" folder's file `multiply.circom`.
 
 ### Inputs
 

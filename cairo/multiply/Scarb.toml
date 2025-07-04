@@ -1,7 +1,15 @@
 [package]
 name = "multiply"
 version = "0.1.0"
+edition = "2024_07"
 
-# See more keys and their definitions at https://docs.swmansion.com/scarb/docs/reference/manifest.html
+[cairo]
+enable-gas = false
 
 [dependencies]
+cairo_execute = "2.11.4"
+
+
+[[target.executable]]
+name = "multiply_main"
+function = "multiply::multiply::main"

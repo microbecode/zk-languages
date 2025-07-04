@@ -2,13 +2,15 @@
 
 Cairo is a ZK language used in the [Starknet](https://www.starknet.io/en) L2 blockchain. It does not support privacy.
 
-Cairo can be used as stand-alone locally (without proofs), or for Starknet smart contracts.
+Cairo can be used as stand-alone locally, or for Starknet smart contracts.
 
 ## Stand-alone usage
 
 1. Follow the official installation instructions to install [Scarb](https://docs.swmansion.com/scarb/download.html), which is Cairo's unofficial package manager
 1. Run `scarb build`. This builds the program
-1. Run `scarb cairo-run`. This runs the program. The inputs are inside the program, since Cairo currently doesn't support inputting parameters directly
+1. Run `scarb execute --print-program-output --arguments 2,3`. This runs the program and generates an execution folder inside the `target` folder.
+1. Run `scarb prove --execution-id 1` to generate a proof for the execution. This utilizes the [S-two](https://github.com/starkware-libs/stwo) prover.
+1. Run `scarb verify --execution-id 1` to verify the generated proof.
 
 ## Contract usage
 

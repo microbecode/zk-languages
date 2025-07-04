@@ -2,17 +2,16 @@
 
 Noir is a ZK language used in the [Aztec](https://aztec.network/) L2 blockchain. It enables full privacy for transactions.
 
-At the time of writing, a local sandbox is available, but no public testnet.
+Stand-alone usage is supported, but it's also possible to use Noir to interface with the Aztec blockchain.
 
 ## Stand-alone usage
 
-1. Follow the official installation instructions to install [Nargo](https://noir-lang.org/docs/getting_started/installation/), which is Noir's command line utility.
-1. Install a [Barretenberg proving backend] with bbup: (https://github.com/AztecProtocol/aztec-packages/blob/master/barretenberg/bbup/README.md).
-1. At the time of writing, `bb` wasn't added to PATH with the installation. Running `bbup` gives you the installation folder - add that to your PATH manually.
-1. Generate the witness: `nargo execute witness-multiply`. This generates a witness file in the "target" folder.
-1. Run `bb prove_output_all -b ./target/multiply.json -w ./target/witness-multiply.gz -o ./target`. This generates needed proof and verification files in the `target` folder.
+1. Follow the official installation instructions to install [Nargo](https://noir-lang.org/docs/getting_started/quick_start/), which is Noir's command line utility. Install also the Barretenberg proving backend.
+1. Generate the witness: `nargo execute`. This generates a witness file (`multiply.gz`) in the "target" folder.
+1. Run `bb prove -b ./target/multiply.json -w ./target/multiply.gz -o ./target`. This generates needed proof in the `target` folder.
+1. Run `bb write_vk -b ./target/multiply.json -o ./target` to generate a verification key.
 1. Run `bb verify -k ./target/vk -p ./target/proof`. This verifies the proof with the verifier inputs. Using incorrect proof fails the verification.
-1. If you wish, you can also generate a Solidity verifier program by `bb contract`. This gets generated in the `target` folder as `contract.sol`. Note that this verifier is program-specific, and will not work with any other Noir program than the one you used when generating the verifier.
+1. If you wish, you can also generate a Solidity verifier program by `bb write_solidity_verifier -k ./target/vk -o ./target/Verifier.sol`. This gets generated in the `target` folder as `Verifier.sol`. Note that this verifier is program-specific, and will not work with any other Noir program.
 
 ## Contract usage
 

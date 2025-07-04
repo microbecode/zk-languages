@@ -6,7 +6,7 @@ Cairo can be used as stand-alone locally, or for Starknet smart contracts.
 
 ## Stand-alone usage
 
-1. Follow the official installation instructions to install [Scarb](https://docs.swmansion.com/scarb/download.html), which is Cairo's unofficial package manager
+1. Follow the official installation instructions to install Scarb with [starkup](https://docs.swmansion.com/scarb/download.html#install-via-starkup-installation-script). Scarb is Cairo's unofficial package manager
 1. Run `scarb build`. This builds the program
 1. Run `scarb execute --print-program-output --arguments 2,3`. This runs the program and generates an execution folder inside the `target` folder.
 1. Run `scarb prove --execution-id 1` to generate a proof for the execution. This utilizes the [S-two](https://github.com/starkware-libs/stwo) prover.
@@ -18,28 +18,24 @@ This works the same as stand-alone usage, except that you can't run the program 
 
 ### Deployment
 
-1. Install the required tooling (starkli and scarb): https://book.starknet.io/ch02-05-testnet-deployment.html
-1. Install a wallet with ArgentX: https://docs.starknet.io/documentation/quick_start/set_up_an_account/
-1. Get testnet tokens: https://blastapi.io/faucets/starknet-sepolia-eth
-1. Transfer tokens to some other address to get your account contract deployed
-1. Export your wallet's private key. You'll need it in the next step
-1. Prepare your account locally. Here's an example I used: `starkli account fetch 0xPUBLIC_KEY_OF_YOUR_WALLET --output ~/.starkli-wallets/deployer/account.json --rpc https://starknet-sepolia.public.blastapi.io`
-1. Declare your contract to the network. Here's an example I used: `starkli declare --account ~/.starkli-wallets/deployer/account.json --keystore ~/.starkli-wallets/deployer/keystore.json --rpc https://starknet-sepolia.public.blastapi.io ./target/dev/multiply_Multiply.contract_class.json`
-1. Deploy your contract. Here's an example I used: `starkli deploy --account /home/laurip/.starkli-wallets/deployer/account.json --keystore ~/.starkli-wallets/deployer/keystore.json --rpc https://starknet-goerli.g.alchemy.com/v2/MYKEY CLASSHASH`
+1. Install the required tooling with starkup: https://docs.starknet.io/guides/quickstart/environment-setup/#installing_scarb_and_starknet_foundry
+1. Generate a local wallet: `sncast account create --network=sepolia --name=sepolia`
+1. Get testnet STRK tokens for the generated address: https://starknet-faucet.vercel.app/
+1. Deploy the account: `sncast account deploy --network sepolia --name sepolia`
+1. Declare your contract to the network: `sncast --account=sepolia declare --contract-name=Multiply --network=sepolia`. If you didn't make any changes in the contract, this should give an error, since a contract needs to be declared only once.
+1. Deploy your contract: `sncast --account=sepolia deploy --class-hash=0x048d2cc3ec5c9d3de3a9f7626f49b080951e7e706fb314f045925a36a80123a5 --network=sepolia`
 
-An example deployment can be found [here](https://sepolia.starkscan.co/contract/0x0067560bce438b6464423ba1b0d97b291b14c699856e2b59ce2760554154fe45).
-
-Note that at some point Starknet deployments will require STRK tokens, but at the time of writing one can use Eth as well.
+An example deployment can be found [here](https://sepolia.starkscan.co/contract/0x02adf1704c89117e67541b732eb98f573f13eced3d82f00fcc503db11618d887).
 
 ## Overview
 
-### ZK program
+### Standalone program
 
 The program itself is in the "src" folder.
 
 ### Inputs
 
-All inputs are given inside the program itself. All inputs are public, since Cairo does not support privacy.
+All inputs are given as command-line parameters. All inputs are public, since Cairo does not support privacy.
 
 ### Outputs
 
@@ -47,4 +43,4 @@ Outputs are logged in the console.
 
 ### Proof
 
-Unfortunately, stand-alone usage and local contract usage don't generate proofs. Proofs are generated only for Cairo program executions inside the Starknet blockchain. There is no local prover available currently.
+Proofs are generated under the `target/executionX` folder, where `X` is the execution's index.

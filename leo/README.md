@@ -6,7 +6,7 @@ Leo can be used as stand-alone locally, or for Aleo smart contracts.
 
 ## Stand-alone usage
 
-1. Follow the official installation instructions to install [Leo](https://developer.aleo.org/leo/installation)
+1. Follow the official installation instructions to install [Leo](https://developer.aleo.org/guides/introduction/installation)
 1. Run `leo run main 2u32 3u32` to execute the program without proofs
 1. Run `leo execute main 2u32 3u32` to generate and verify proofs for the program execution
 
@@ -15,8 +15,6 @@ Leo can be used as stand-alone locally, or for Aleo smart contracts.
 Some of the documentation is a bit outdated and you'll probably need to search their Discord for answers.
 
 Remember that all Aleo programs need to have a unique name. Rename this program if you want to redeploy it.
-
-An example deployment has been done at https://explorer.aleo.org/transaction/at1v3k0wqg3s4zdwg9whede30u2npcs55gzyj0e2rf743f73mz5tvgs3rshvk
 
 How to deploy your own version:
 
@@ -43,4 +41,4 @@ Inputs (both public and private) are given to the 'main' function through the fi
 
 ### Outputs
 
-Outputs are displayed in the command line. There is also folder "outputs", but nothing gets generated there - unsure what is its function.
+Outputs are displayed in the command line.

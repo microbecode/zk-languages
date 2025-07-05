@@ -5,7 +5,7 @@ export class Multiply extends SmartContract {
     super.init();
   }
 
-  @method multiply(a: Field, b: Field): Field {
+  @method.returns(Field) async multiply(a: Field, b: Field) {
     return a.mul(b);
   }
 }

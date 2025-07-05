@@ -11,9 +11,9 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "typescript": "^4.7.2"
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "o1js": "^1.7.0"
+    "o1js": "^2.*"
   }
 }

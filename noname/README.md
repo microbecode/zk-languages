@@ -2,8 +2,6 @@
 
 Noname is a stand-alone ZK language. It enables full privacy for operations.
 
-Noname is a brand new language (even if the lore of ZK languages). It's lacking quite a bit of features, but seems interesting.
-
 There is no native ecosystem/network/blockchain around Noname. Therefore, no ZK smart contracts are supported.
 
 ## Stand-alone usage

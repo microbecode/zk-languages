@@ -8,7 +8,7 @@ There is no native ecosystem/network/blockchain around Polylang. Therefore, no Z
 
 ## Stand-alone usage
 
-Unfortunately, there's no convenient way to store a Polylang program in a file. It's possible, but very [impractical](https://polylang.dev/docs/getting-started/polylang-lib).
+Unfortunately, there's no convenient way to store a Polylang program in a stand-alone file. It's possible, but somewhat [impractical](https://polylang.dev/docs/getting-started/polylang-lib).
 
 Therefore we'll use the option to provide the program as command line parameters.
 

@@ -6,7 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/node": "^20.6.2",
-    "o1js": "^1.7.0",
+    "o1js": "^2.7.0",
     "typescript": "^5.2.2"
   }
 }

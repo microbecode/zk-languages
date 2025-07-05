@@ -1,16 +1,26 @@
-import { Field, verify, ZkProgram } from "o1js";
+import { Field, Struct, verify, ZkProgram } from "o1js";
+
+class PublicInputs extends Struct({
+  a: Field
+}) {}
+
+class PublicOutputs extends Struct({
+  result: Field
+}) {}
 
 const MyProgram = ZkProgram({
   name: "multiply",
-  publicInput: Field,
-  publicOutput: Field,
+  publicInput: PublicInputs,
+  publicOutput: PublicOutputs,
   methods: {
     multiply: {
       privateInputs: [Field],
-      async method(a : Field, b : Field) {
-        // This is just to make sure that the fields are read in the correct order
-        a.assertEquals(Field(2));
-        return a.mul(b);
+      async method(publicInput: PublicInputs, b: Field) {
+        return {
+          publicOutput: new PublicOutputs({
+            result: publicInput.a.mul(b)
+          })
+        };
       },
     },
   },
@@ -23,14 +33,14 @@ const MyProgram = ZkProgram({
 const { verificationKey } = await MyProgram.compile();
 
 // produce proof
-const proof = await MyProgram.multiply(Field(2), Field(3));
+const proof = await MyProgram.multiply({a: Field(2)}, Field(3));
 
 // verify proof
-const proofValid = await verify(proof.toJSON(), verificationKey);
+const proofValid = await verify(proof.proof.toJSON(), verificationKey);
 
-console.log("Proof:", JSON.stringify(proof.toJSON()));
-console.log("Public output", proof.publicOutput.value);
-console.log("Public inputs", proof.publicInput.value);
+console.log("Proof:", JSON.stringify(proof.proof.toJSON()));
+console.log("Public output", proof.proof.publicOutput);
+console.log("Public inputs", proof.proof.publicInput); 
 console.log("Verified successfully:", proofValid);
 
 export { MyProgram };

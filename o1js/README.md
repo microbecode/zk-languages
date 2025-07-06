@@ -21,12 +21,12 @@ The contract version is located in folder `contract`.
 To follow the contract:
 1. Make sure you have the o1js ZKApp CLI installed.
 1. In general, follow the instructions at https://docs.minaprotocol.com/zkapps/how-to-deploy-a-zkapp .
-  1. Give name `multiply`
-  1. Choosen testnet
-  1. As GraphQL API, you can use https://api.minascan.io/node/devnet/v1/graphql
-  1. As transaction fee, use 0.1
-  1. Choose to create a new fee payer
-  1. Call the payer `mina`
+    1. Give name `multiply`
+    1. Choosen testnet
+    1. As GraphQL API, you can use https://api.minascan.io/node/devnet/v1/graphql
+    1. As transaction fee, use 0.1
+    1. Choose to create a new fee payer
+    1. Call the payer `mina`
 1. Click the provided faucet link to get some tokens. Wait for a few minutes.
 1. Deploy with `zk deploy`
 

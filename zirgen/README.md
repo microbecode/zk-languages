@@ -6,9 +6,9 @@ The language is used internally for generating proofs for Risc0, but can be util
 
 ## Stand-alone usage
 
-1. Download and install [Bazelisk](https://github.com/bazelbuild/bazelisk/blob/master/README.md). I downloaded the binary to this folder as `bazelisk-linux-amd64` - these instructions are written accordingly.
+1. Download and install [Bazelisk](https://github.com/bazelbuild/bazelisk/blob/master/README.md). I downloaded the binary to this folder as `bazelisk-linux-amd64` in the root of this folder - these instructions are written accordingly.
 1. Clone the repo: `git clone https://github.com/risc0/zirgen.git`. Enter the `zirgen` folder.
-1. Run the project with `./bazelisk-linux-amd64 run //zirgen/dsl:zirgen -- $(pwd)/../multiply.zir --test --test-cycles=1`.
+1. Run the project with `../bazelisk-linux-amd64 run //zirgen/dsl:zirgen -- $(pwd)/../multiply/multiply.zir --test`.
     1. Note that if your `/tmp` folder is restricted, it will cause the run to fail. You can remove this requirement by modifying the cloned folder's `.bazelrc` and commenting out line `build:linux --sandbox_add_mount_pair=/tmp`.
 
 ## Stand-alone program overview

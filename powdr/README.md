@@ -8,13 +8,12 @@ There is no native ecosystem/network/blockchain around Powdr. Therefore, no ZK s
 
 ## Stand-alone usage
 
-1. Follow the official installation instructions to install [Powdr](https://docs.powdr.org/installation.html).
-1. Run a trusted setup: `powdr setup 8 --backend halo2 --field bn254`
-1. Execute the program: `powdr pil multiply.asm --field bn254 --force --inputs 2,3`
-1. Generate a verification key: `powdr verification-key multiply.asm --field bn254 --backend halo2 --params params.bin`
-1. Generate proof: `powdr prove multiply.asm --field bn254 --backend halo2 --params params.bin --vkey vkey.bin`
-1. Verify the proof: `powdr verify multiply.asm --field bn254 --backend halo2 --vkey "vkey.bin" --params "params.bin" --proof "multiply_proof.bin" --publics 6`
-
+1. Follow the official installation instructions to install [Powdr](https://docs.powdr.org/installation_sdk.html). Install the non-SIMD version (Plonky3).
+1. Enter the `multiply` folder
+1. Compile and generate witness: `powdr pil --inputs 2,3 multiply.asm`
+1. Generate verification key: `powdr verification-key --backend plonky3 multiply.asm`
+1. Generate proof: `powdr prove --vkey vkey.bin --backend plonky3  multiply.pil`
+1. Verify the proof: `powdr verify --publics 6 --proof multiply_proof.bin --vkey vkey.bin --backend plonky3 multiply.pil`
 
 ## Overview
 
@@ -28,7 +27,7 @@ The inputs are provided as command-line arguments.
 
 ### Outputs
 
-Outputs are given to the program as command-line arguments. The system verifies that the given outputs match the real outputs.
+In theory, outputs should be given in the command line. However, I did not get public outputs working from the code. Instead, the verification command gives the public output as parameter.
 
 ### Proof
 

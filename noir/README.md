@@ -7,6 +7,7 @@ Stand-alone usage is supported, but it's also possible to use Noir to interface 
 ## Stand-alone usage
 
 1. Follow the official installation instructions to install [Nargo](https://noir-lang.org/docs/getting_started/quick_start/), which is Noir's command line utility. Install also the Barretenberg proving backend.
+1. Go to the `multiply` folder.
 1. Generate the witness: `nargo execute`. This generates a witness file (`multiply.gz`) in the "target" folder.
 1. Run `bb prove -b ./target/multiply.json -w ./target/multiply.gz -o ./target`. This generates needed proof in the `target` folder.
 1. Run `bb write_vk -b ./target/multiply.json -o ./target` to generate a verification key.
@@ -15,13 +16,13 @@ Stand-alone usage is supported, but it's also possible to use Noir to interface 
 
 ## Contract usage
 
-1. Go to the `contracts/multiply` folder.
-1. Compile the contract: `aztec-nargo compile`
+1. Go to the `contract/contracts/multiply` folder.
 1. Install and run Docker
-1. Follow the instructions at https://docs.aztec.network/dev_docs/getting_started/quickstart . Install and run the sandbox, then create an account 
-1. In te same folder, execute `aztec-wallet deploy ./target/multiply-Multiply.json --from accounts:my-wallet -a multiply` to deploy the contract in the sandbox
-1. Execute the contract function with a transaction: `aztec-wallet send multiply --from accounts:my-wallet --contract-address multiply --args 2 3`. If you want to to see the returned value, it's easiest to just simulate the transaction: replace `send` with `simulate` in the command.
-
+1. Install the required Aztec tooling by following the instructions in [this chapter](https://docs.aztec.network/developers/getting_started).
+1. Follow the instructions at https://docs.aztec.network/developers/guides/getting_started_on_testnet until Step 1 is completed. These prepare your wallet for contract deployments.
+1. Compile the contract with `aztec-nargo build`
+1. Deploy the contract to testnet with `aztec-wallet deploy --node-url $NODE_URL --from accounts:my-wallet --payment method=fpc-sponsored,fpc=contracts:sponsoredfpc --no-wait ./target/multiply-Multiply.json`
+1. You can interact with the deployed contract by running: `aztec-wallet send multiply --node-url $NODE_URL --from accounts:my-wallet --no-wait --contract-address 0x2d299d46a68b4a442dc580d62a6e4fb174ce5f685c3b5d54f692dcda1ea4d756 --args 2 3` . Remember to replace your contract address and that it may take half an hour for any transaction to be finalized.
 
 ## Stand-alone program overview
 
@@ -47,4 +48,4 @@ The proof string itself is generated in the `target` folder as file `proof`. The
 
 ## Contract program overview
 
-The program includes a lot of stuff which is bound to disappear, once the ecosystem matures. There are a lot of definitions and files which seem superfluous. The main logic is in one function in `main.nr`, but a lot of weird stuff is required around it.
+The contract is quite straight

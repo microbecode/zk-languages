@@ -10,20 +10,18 @@ Leo can be used as stand-alone locally, or for Aleo smart contracts.
 1. Run `leo run main 2u32 3u32` to execute the program without proofs
 1. Run `leo execute main 2u32 3u32 --print` to generate proofs for the program execution
 
+Note that the private key used in `.env` is public and used by any developer.
+
 ## Contract usage
 
-Some of the documentation is a bit outdated and you'll probably need to search their Discord for answers.
+1. Go to the `contract` folder.
+1. Deploy the contract with `leo deploy --broadcast`.
 
-Remember that all Aleo programs need to have a unique name. Rename this program if you want to redeploy it.
+Note that the private key used in `.env` is public and used by any developer. Its corresponding account may or may not have (testnet) assets.
 
-An example deployment has been done at https://explorer.aleo.org/transaction/at1v3k0wqg3s4zdwg9whede30u2npcs55gzyj0e2rf743f73mz5tvgs3rshvk
+If you get issues regarding insufficient fees, you need to create your own account and find testnet tokens for it. Faucets can be found at https://developer.aleo.org/guides/introduction/quick_start/#2-seed-your-wallet-with-testnet-credits . Change the private key in `.env`.
 
-How to deploy your own version:
-
-1. Figure out how to get testnet tokens. Faucet only gives them to people living in the States.
-1. Install Leo according to the instructions above
-1. Install SnarkOS according to the instructions at https://github.com/AleoHQ/snarkos
-1. Follow instructions at https://developer.aleo.org/testnet/getting_started/deploy_execute_demo
+An example deployment can be seen at https://explorer.provable.com/transaction/at1xm637u7hv0z3njfj5qkl52utxgj0254q7wjhs2ge4t8jytm8cv9sy7hm56 
 
 ## Stand-alone program overview
 

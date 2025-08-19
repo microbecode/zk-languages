@@ -1,6 +1,6 @@
-.env
 *.avm
 *.prover
 *.verifier
 outputs/
 build
+snarkOS

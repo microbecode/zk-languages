@@ -6,9 +6,9 @@ Leo can be used as stand-alone locally, or for Aleo smart contracts.
 
 ## Stand-alone usage
 
-1. Follow the official installation instructions to install [Leo](https://developer.aleo.org/leo/installation)
+1. Follow the official installation instructions to install [Leo](https://docs.leo-lang.org/getting_started/installation)
 1. Run `leo run main 2u32 3u32` to execute the program without proofs
-1. Run `leo execute main 2u32 3u32` to generate and verify proofs for the program execution
+1. Run `leo execute main 2u32 3u32 --print` to generate proofs for the program execution
 
 ## Contract usage
 
@@ -34,8 +34,6 @@ The program itself is in the "src" folder.
 #### Intermediary format
 
 The original Leo program is first compiled into an intermediary format. In this case, the format is Aleo. That's generated in the "build" folder.
-
-The intermediary format code is public, once deployed to the blockchain. An example can be found [here](https://explorer.aleo.org/program/aleoswap06.aleo).
 
 ### Inputs
 

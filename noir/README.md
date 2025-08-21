@@ -22,7 +22,7 @@ Stand-alone usage is supported, but it's also possible to use Noir to interface 
 1. Follow the instructions at https://docs.aztec.network/developers/guides/getting_started_on_testnet until Step 1 is completed. These prepare your wallet for contract deployments.
 1. Compile the contract with `aztec-nargo build`
 1. Deploy the contract to testnet with `aztec-wallet deploy --node-url $NODE_URL --from accounts:my-wallet --payment method=fpc-sponsored,fpc=contracts:sponsoredfpc --no-wait ./target/multiply-Multiply.json`
-1. You can interact with the deployed contract by running: `aztec-wallet send multiply --node-url $NODE_URL --from accounts:my-wallet --no-wait --contract-address 0x2d299d46a68b4a442dc580d62a6e4fb174ce5f685c3b5d54f692dcda1ea4d756 --args 2 3` . Remember to replace your contract address and that it may take half an hour for any transaction to be finalized.
+1. You can interact with the deployed contract by running: `aztec-wallet send multiply --node-url https://aztec-alpha-testnet-fullnode.zkv.xyz --from accounts:my-wallet --no-wait --contract-address 0x2d299d46a68b4a442dc580d62a6e4fb174ce5f685c3b5d54f692dcda1ea4d756 --args 2 3 --contract-artifact` . Remember to replace your contract address and that it may take half an hour for any transaction to be finalized.
 
 ## Stand-alone program overview
 

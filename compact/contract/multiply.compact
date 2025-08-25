@@ -1,0 +1,6 @@
+pragma language_version 0.15;
+import CompactStandardLibrary;
+
+export circuit multiply(a: Uint<64>, b: Uint<64>): Uint<128> {
+  return a * b;
+}

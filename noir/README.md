@@ -16,7 +16,7 @@ Stand-alone usage is supported, but it's also possible to use Noir to interface 
 
 ## Contract usage
 
-1. Go to the `contract/contracts/multiply` folder.
+1. Go to the `contract` folder.
 1. Install and run Docker
 1. Install the required Aztec tooling by following the instructions in [this chapter](https://docs.aztec.network/developers/getting_started).
 1. Follow the instructions at https://docs.aztec.network/developers/guides/getting_started_on_testnet until Step 1 is completed. These prepare your wallet for contract deployments.
@@ -45,7 +45,3 @@ Outputs and public inputs are displayed in the file `./target/proof_fields`. The
 ### Proof
 
 The proof string itself is generated in the `target` folder as file `proof`. The `proof_fields.json` file is for inspecting the inputs and outputs visually.
-
-## Contract program overview
-
-The contract is quite straight

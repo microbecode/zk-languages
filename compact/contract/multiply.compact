@@ -1,6 +1,9 @@
 pragma language_version 0.15;
 import CompactStandardLibrary;
 
-export circuit multiply(a: Uint<64>, b: Uint<64>): Uint<128> {
-  return a * b;
+witness local_b() : Uint<64>; 
+
+export circuit multiply(a: Uint<64>): Uint<128> { 
+  const disclosed_b = disclose(local_b());
+  return a * disclosed_b;
 }

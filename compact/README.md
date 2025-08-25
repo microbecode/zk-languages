@@ -10,6 +10,10 @@ Stand-alone usage is not supported - only on-chain smart contracts.
 
 The contract can be found in the `contract` folder.
 
+The syntax is straightforward, for a simple contract like this. One interesting aspect is that Compact tries to avoid overflows as much as possible (even if overflows are technically not possible in ZK) - multiplying two 64bit numbers by default returns a 128bit number.
+
+Private function parameters can be supplied by a special *witness*  construct. Revealing that data (even if it's just used as a multiplier for a public value) has to be explicitly done through a *disclose* function.
+
 ### Deployment
 
 Deploying a contract to the Midnight testnet involves a lot of steps and complicated logic. Luckily, a scaffold project has been built to ease the logic: https://github.com/kaleababayneh/create-midnight-app .

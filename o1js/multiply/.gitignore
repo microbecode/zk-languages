@@ -1,4 +1,0 @@
-node_modules
-build
-.env
-.DS_Store

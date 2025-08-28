@@ -1,5 +1,0 @@
-*.avm
-*.prover
-*.verifier
-outputs/
-build

@@ -8,7 +8,7 @@ Unfortunately, most documentation and examples are for utilizing the language as
 
 ## Stand-alone usage
 
-1. Go to folder `multiply`
+1. Go to folder `standalone`
 1. Install packages with `npm i`
 1. Build the project with `npx tsc`
 1. Run `node build/src/zkProgram.js`. This generates a proof and verifies it. All data is output to console.

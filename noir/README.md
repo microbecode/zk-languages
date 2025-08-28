@@ -7,7 +7,7 @@ Stand-alone usage is supported, but it's also possible to use Noir to interface 
 ## Stand-alone usage
 
 1. Follow the official installation instructions to install [Nargo](https://noir-lang.org/docs/getting_started/quick_start/), which is Noir's command line utility. Install also the Barretenberg proving backend.
-1. Go to the `multiply` folder.
+1. Go to the `standalone` folder.
 1. Generate the witness: `nargo execute`. This generates a witness file (`multiply.gz`) in the "target" folder.
 1. Run `bb prove -b ./target/multiply.json -w ./target/multiply.gz -o ./target`. This generates needed proof in the `target` folder.
 1. Run `bb write_vk -b ./target/multiply.json -o ./target` to generate a verification key.

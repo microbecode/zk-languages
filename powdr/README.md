@@ -9,7 +9,7 @@ There is no native ecosystem/network/blockchain around Powdr. Therefore, no ZK s
 ## Stand-alone usage
 
 1. Follow the official installation instructions to install [Powdr](https://docs.powdr.org/installation_sdk.html). Install the non-SIMD version (Plonky3).
-1. Enter the `multiply` folder
+1. Enter the `standalone` folder
 1. Compile and generate witness: `powdr pil --inputs 2,3 multiply.asm`
 1. Generate verification key: `powdr verification-key --backend plonky3 multiply.asm`
 1. Generate proof: `powdr prove --vkey vkey.bin --backend plonky3  multiply.pil`

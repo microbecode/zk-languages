@@ -35,7 +35,7 @@ Next, you will need to run a trusted setup ceremony to generate some common secr
 
 ### ZK program
 
-The program itself is in the "multiply" folder's file `multiply.circom`.
+The program itself is in the "standalone" folder's file `multiply.circom`.
 
 ### Inputs
 

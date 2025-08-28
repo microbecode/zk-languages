@@ -25,8 +25,7 @@ Do note that especially the contract format evolves rapidly in all ecosystems. A
 | Circom | ✅ | ❌ | ✅ |
 | Compact | ❌ | ✅ | ✅ |
 | Leo | ✅ | ✅ | ✅ |
-| Lurk | ✅ | ❌ | Unknown |
-| Miden | ✅ | ✅ | ✅ |
+| Lurk | ✅ | ❌ | ✅ |
 | Noir | ✅ | ✅ | ✅ |
 | Noname | ✅ | ❌ | ✅ |
 | o1js | ✅ | ✅ | ✅ |

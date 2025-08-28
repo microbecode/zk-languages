@@ -17,6 +17,24 @@ Some languages (or the ecosystems around them) support also ZK smart contracts (
 
 Do note that especially the contract format evolves rapidly in all ecosystems. Anything written here may be outdated already the day after it's written.
 
+## Languages at a glance
+
+| Language | Stand-alone supported | Contracts supported | Privacy supported |
+| --- | --- | --- | --- |
+| Cairo | ✅ | ✅ | ❌ |
+| Circom | ✅ | ❌ | ✅ |
+| Compact | ❌ | ✅ | ✅ |
+| Leo | ✅ | ✅ | ✅ |
+| Lurk | ✅ | ❌ | Unknown |
+| Miden | ✅ | ✅ | ✅ |
+| Noir | ✅ | ✅ | ✅ |
+| Noname | ✅ | ❌ | ✅ |
+| o1js | ✅ | ✅ | ✅ |
+| Polylang | ✅ | ❌ | ❌ |
+| Powdr | ✅ | ❌ | ✅ |
+| Zirgen | ✅ | ❌ | ✅ |
+| ZoKrates | ✅ | ❌ | ✅ |
+
 ### Folder structure
 
 All folders under the root folder are based on the language's name. Under that, there is a README and a `multiply` folder, which contains the stand-alone programs with that language.

@@ -36,7 +36,7 @@ Do note that especially the contract format evolves rapidly in all ecosystems. A
 
 ### Folder structure
 
-All folders under the root folder are based on the language's name. Under that, there is a README and a `multiply` folder, which contains the stand-alone programs with that language.
+All folders under the root folder are based on the language's name. Under that, there is a README and a `standalone` folder, which contains the stand-alone programs with that language.
 
 If the language has smart contract capabilities, they are demonstrated in a `contract` folder.
 

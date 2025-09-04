@@ -1,8 +1,10 @@
 # Various ZK languages
 
-This repository introduces various ZK languages via a simple program, which is as similar as possible for each language.
+This repository introduces various ZK languages (DSLs) via a simple program, which is as similar as possible for each language.
 
-The used program has the following characteristics:
+The aim is to demonstrate the syntax of each language, how it can be utilized and whether there is an ecosystem for smart contracts around it.
+
+The used stand-alone program has the following characteristics:
 
 - It has two inputs: `a` and `b`. Of these, `a` is a private input (if the language supports privacy) and `b` is public
 - It has one public output, which is the multiple of `a` and `b`.
@@ -11,7 +13,7 @@ The program, therefore, demonstrates how to write a ZK program where you can pro
 
 ## Stand-alone and contracts
 
-ZK languages can usually be used at least as stand-alone. This means that proofs generated for ZK programs or for ZK-VM executions.
+ZK languages can usually be used at least as stand-alone. Proofs for the program execution are then generated locally, and possibly verification happens also locally.
 
 Some languages (or the ecosystems around them) support also ZK smart contracts (or zkApps). In this case, the same multiplication code is also expressed in a contract format, which typically differs from the stand-alone version.
 
@@ -20,36 +22,25 @@ Do note that especially the contract format evolves rapidly in all ecosystems. A
 ## Languages at a glance
 
 | Language | Stand-alone supported | Contracts supported | Privacy supported |
-| --- | --- | --- | --- |
-| Cairo | ✅ | ✅ | ❌ |
-| Circom | ✅ | ❌ | ✅ |
-| Compact | ❌ | ✅ | ✅ |
-| Leo | ✅ | ✅ | ✅ |
-| Lurk | ✅ | ❌ | ✅ |
-| Noir | ✅ | ✅ | ✅ |
-| Noname | ✅ | ❌ | ✅ |
-| o1js | ✅ | ✅ | ✅ |
-| Polylang | ✅ | ❌ | ❌ |
-| Powdr | ✅ | ❌ | ✅ |
-| Zirgen | ✅ | ❌ | ✅ |
-| ZoKrates | ✅ | ❌ | ✅ |
+| -------- | --------------------- | ------------------- | ----------------- |
+| Cairo    | ✅                    | ✅                  | ❌                |
+| Circom   | ✅                    | ❌                  | ✅                |
+| Compact  | ❌                    | ✅                  | ✅                |
+| Leo      | ✅                    | ✅                  | ✅                |
+| Lurk     | ✅                    | ❌                  | ✅                |
+| Noir     | ✅                    | ✅                  | ✅                |
+| Noname   | ✅                    | ❌                  | ✅                |
+| o1js     | ✅                    | ✅                  | ✅                |
+| Polylang | ✅                    | ❌                  | ❌                |
+| Powdr    | ✅                    | ❌                  | ✅                |
+| Zirgen   | ✅                    | ❌                  | ✅                |
+| ZoKrates | ✅                    | ❌                  | ✅                |
 
 ### Folder structure
 
-All folders under the root folder are based on the language's name. Under that, there is a README and a `standalone` folder, which contains the stand-alone programs with that language.
+All folders under the root folder are based on the language's name. Under that, there is a README and one or both of the folders `standalone` and `contract`.
 
-If the language has smart contract capabilities, they are demonstrated in a `contract` folder.
-
-## Differences
-
-The languages folders have at least the following possible differences:
-
-- Different technologies, so different required files and instructions
-- Some languages generate proofs explicitly, some do things more in the background
-- Some languages don't have local proving available at all, currently
-- Some languages support privacy, while others don't
-- Some languages require a trusted setup
-- Some languages (or ecosystems around the language) support ZK smart contracts
+The README for each language explains how to run the given program and other details.
 
 ## Contact
 

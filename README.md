@@ -4,12 +4,13 @@ This repository introduces various ZK languages (DSLs) via a simple program, whi
 
 The aim is to demonstrate the syntax of each language, how it can be utilized and whether there is an ecosystem for smart contracts around it.
 
-The used stand-alone program has the following characteristics:
+## What languages are included
 
-- It has two inputs: `a` and `b`. Of these, `a` is a private input (if the language supports privacy) and `b` is public
-- It has one public output, which is the multiple of `a` and `b`.
+This repository focuses only on languages (DSLs) that fit the following criteria:
 
-The program, therefore, demonstrates how to write a ZK program where you can prove that you know a private `a` so that `a * b = c`.
+- They are exclusively designed for writing ZK circuits (programs)
+- There is enough documentation for the language that it's feasible to write a minimal example
+- They are not libraries, crates or zkVMs
 
 ## Stand-alone and contracts
 
@@ -18,6 +19,15 @@ ZK languages can usually be used at least as stand-alone. Proofs for the program
 Some languages (or the ecosystems around them) support also ZK smart contracts (or zkApps). In this case, the same multiplication code is also expressed in a contract format, which typically differs from the stand-alone version.
 
 Do note that especially the contract format evolves rapidly in all ecosystems. Anything written here may be outdated already the day after it's written.
+
+### Basic program
+
+The used stand-alone program has the following characteristics:
+
+- It has two inputs: `a` and `b`. Of these, `a` is a private input (if the language supports privacy) and `b` is public
+- It has one public output, which is the multiple of `a` and `b`.
+
+The program, therefore, demonstrates how to write a ZK program where you can prove that you know a private `a` so that `a * b = c`.
 
 ## Languages at a glance
 
